@@ -1,0 +1,9 @@
+<body>
+<form action="/api/verify/<%= vl %>" method="post">
+    <label data-error="wrong" data-success="right" for="ur-name">ID</label>
+    <input type="text" id="otp" name="otp" class="form-control validate" required>
+    <button class="btn btn-unique">Send <i class="fas fa-paper-plane-o ml-1"></i></button>
+</form>
+<div class="spacer"></div>
+<script src='/script.js'></script>
+</body>

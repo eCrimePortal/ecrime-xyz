@@ -1,0 +1,172 @@
+<%- include('../_partials/top.ejs') %>
+	<div class="section full-height">
+		<div class="absolute-center">
+			<div class="section">
+				<div class="container">
+					<div class="row">
+						<div class="col-12">
+				<h1 class="title-big">E-Crime Reporting Portal</h1>
+				<p class="subhead">A CNSP Initiative</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="section mt-5">
+				<div class="container">
+					<div class="row">
+						<div class="col-12">
+							<div class="al-container">
+                <p>Current Threat Level:
+								<span class="status guarded" id="alert-level" data-toggle="tooltip" data-placement="right" title="The threat level is calculated every week by security analysts in accordance to the latest world trends.">GUARDED</span></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+<section class="about">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-10">
+					<h1>About Us</h1>
+
+					<p>ECrime.XYZ is an initiative of the Clear Net Security Foundation with the vision of educating Indians
+					about Cyber Crimes and how to protect themselves from being vulnerable. Each day, more than 1000 people
+					face threats they do not know how to protect themselves against. With easy to understand tutorials, public
+						meets, webinars and more, ECrime.XYZ aims to eradicate cyber crimes from India.</p>
+					</div>
+				</div>
+					</div>
+			</div>
+</section>
+<div class="spacer"></div>
+
+<section class="tl-section">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-2">
+			</div>
+			<div class="col-md-10">
+				<h1>CNSP Threat Level</h1>
+
+				<p>This week's CNSP TL remains at <tl class="guarded">GUARDED</tl> due to the continued threat posed by various malicious groups targeting government networks and new critical security patches released by Microsoft. Organizations and users are advised to update and apply all appropriate vendor security patches to systems, update their anti-virus signatures daily, and review mitigation strategies to defend against attacks on networks and web applications. Users are reminded not to follow links or open attachments provided by unknown or untrusted sources. <a href="/threats">Learn More</a></p>
+			</div>
+		</div>
+	</div>
+</section>
+<div class="spacer"></div>
+<section class="report-home">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<h1>Request Support</h1>
+
+				<p>Out of our <%= total %> support staff members, we have <%= online %> online to assist you! Click on the appropriate button  according to the urgency of your request and we will get back to you as soon as possible.</p>
+				<div class="modal fade" id="urgent" tabindex="-1" role="dialog" aria-labelledby="urgent"
+					 aria-hidden="true">
+					<div class="modal-dialog" role="document">
+						<div class="modal-content">
+							<div class="modal-header text-center">
+								<h4 class="modal-title w-100 font-weight-bold">Urgent Request</h4>
+								<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+									<span aria-hidden="true">&times;</span>
+								</button>
+							</div>
+							<p>In order for your request to be considered <b>URGENT</b> it should be:
+							<ul>
+								<li>explained comprehensively</li>
+								<li>submitted with a correct email</li>
+							</ul>
+							</p>
+							<form action="/api/urgent" method="post">
+							<div class="modal-body mx-3">
+								<div class="md-form mb-2">
+									<label data-error="wrong" data-success="right" for="ur-name">Your Name</label>
+									<input type="text" id="urname" name="urname" class="form-control validate" required>
+								</div>
+
+								<div class="md-form mb-2">
+									<label data-error="wrong" data-success="right" for="ur-email">Your email</label>
+									<input type="email" id="uremail" name="uremail" class="form-control validate" required>
+								</div>
+
+								<div class="md-form mb-2">
+									<label data-error="wrong" data-success="right" for="ur-sub">Subject</label>
+									<input type="text" id="ursub" name="ursub" class="form-control validate" required>
+								</div>
+
+								<div class="md-form">
+									<label data-error="wrong" data-success="right" for="ur-message">Your message</label>
+									<textarea type="text" id="urmessage" name="urmessage" class="md-textarea form-control" rows="4" required></textarea>
+								</div>
+
+							</div>
+							<div class="modal-footer d-flex justify-content-center">
+								<button class="btn btn-unique">Send <i class="fas fa-paper-plane-o ml-1"></i></button>
+							</div>
+							</form>
+						</div>
+					</div>
+				</div>
+
+				<div class="modal fade" id="req" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+					 aria-hidden="true">
+					<div class="modal-dialog" role="document">
+						<div class="modal-content">
+							<div class="modal-header text-center">
+								<h4 class="modal-title w-100 font-weight-bold">Normal Request</h4>
+								<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+									<span aria-hidden="true">&times;</span>
+								</button>
+							</div>
+							<form action="" method="post">
+								<div class="modal-body mx-3">
+									<div class="md-form mb-2">
+										<label data-error="wrong" data-success="right" for="ur-name">Your Name</label>
+										<input type="text" id="ur-name" class="form-control validate" required>
+									</div>
+
+									<div class="md-form mb-2">
+										<label data-error="wrong" data-success="right" for="ur-email">Your email</label>
+										<input type="email" id="ur-email" class="form-control validate" required>
+									</div>
+
+									<div class="md-form mb-2">
+										<label data-error="wrong" data-success="right" for="ur-sub">Subject</label>
+										<input type="text" id="ur-sub" class="form-control validate" required>
+									</div>
+
+									<div class="md-form">
+										<label data-error="wrong" data-success="right" for="ur-message">Your message</label>
+										<textarea type="text" id="ur-message" class="md-textarea form-control" rows="4" required></textarea>
+									</div>
+
+								</div>
+								<div class="modal-footer d-flex justify-content-center">
+									<button class="btn btn-unique">Send <i class="fas fa-paper-plane-o ml-1"></i></button>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+				<div class="spacer-s"></div>
+				<div class="text-center">
+					<div class="row">
+						<div class="col-md-6">
+					<a href="" class="btn btn-u btn-default btn-rounded mb-4" data-toggle="modal" data-target="#urgent">Urgent Request</a>
+						</div>
+						<div class="col-md-6">
+							<a href="" class="btn btn-r btn-default btn-rounded mb-4" data-toggle="modal" data-target="#req">Request</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	</div>
+</section>
+<div class="spacer"></div>
+<script src='/script.js'></script>
+</body>
+<%- include('../_partials/bottom.ejs') %>

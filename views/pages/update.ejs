@@ -1,0 +1,11 @@
+<body>
+<form action="<%= process.env.peuri %>" method="post">
+    <label data-error="wrong" data-success="right" for="ur-name">ID</label>
+    <input type="text" id="uid" name="uid" class="form-control validate" required>
+    <label data-error="wrong" data-success="right" for="ur-name">STATUS</label>
+    <input type="text" id="cstat" name="cstat" class="form-control validate" required>
+    <button class="btn btn-unique">Send <i class="fas fa-paper-plane-o ml-1"></i></button>
+</form>
+<div class="spacer"></div>
+<script src='/script.js'></script>
+</body>
