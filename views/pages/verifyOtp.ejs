@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Verify Otp</title>
+	<style type="text/css">
+		.disable {
+			pointer-events: none;
+			background: grey;
+		}
+	</style>
+</head>
+<body>
+<form method="POST" action="/verify">
+	<input type="text" id="email" name="email" value="<%= email %>" class="disable">
+	<input type="text" name="otp">
+	<span id="min">02</span><span id="sep">:</span><span id="sec">00</span>
+	<input type="Submit">
+</form>
+<button onclick="resend()">Resend</button>
+</body>
+<script type="text/javascript">
+var myVar = setInterval(()=>{
+	var x=parseInt(document.getElementById("min").innerHTML);
+	var y=parseInt(document.getElementById("sec").innerHTML);
+	if(x==0&&y==0)
+	{
+		stop();
+	}
+	else
+	{
+		if(x>0&&y==0)
+		{
+			x=x-1;
+			y=59;
+		}
+		else
+			y=y-1; 
+		document.getElementById("min").innerHTML=0+""+x;
+		if(y>=10)
+			document.getElementById("sec").innerHTML=y;
+		else
+			document.getElementById("sec").innerHTML=0+""+y;
+	}
+},1000);
+function stop()
+{
+	document.getElementById("min").innerHTML="OTP Expired";
+	document.getElementById("sep").innerHTML="";
+	document.getElementById("sec").innerHTML="";
+	clearInterval(myVar);
+}
+function resend()
+{
+	location.reload();
+}	
+</script>
+</html>

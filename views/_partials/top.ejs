@@ -1,0 +1,75 @@
+<% switch(uri) {
+	case "/":
+		var active1 = "active";
+		break;
+	case "/notifications":
+		var active2 = "active";
+		break;
+	case "/projects":
+		var active3 = "active";
+		break;
+	case "/resources":
+		var active4 = "active";
+		break;
+	case "/contact":
+		var active5 = "active";
+		break;
+}%>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('./head.ejs') %>
+  </head>
+<body class="hero-anime">
+	<div class="navigation-wrap bg-light start-header start-style">
+		<div class="container">
+			<div class="row">
+				<div class="col-12">
+					<nav class="navbar navbar-expand-md navbar-light">
+					
+						<a class="navbar-brand" href="/" target="_blank"><img src="https://cdn.glitch.com/b7778812-b2fb-4bfe-b6f4-544d13e13dee%2FECrime.XYZ%20Logo.png?v=1595768272075" alt=""></a>
+						
+						<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+							<span class="navbar-toggler-icon"></span>
+						</button>
+						
+						<div class="collapse navbar-collapse" id="navbarSupportedContent">
+							<ul class="navbar-nav ml-auto py-4 py-md-0">
+                <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4 <%= active1 %>">
+									<a class="nav-link" href="#">Home</a>
+								</li>
+								<li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
+									<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Report</a>
+									<div class="dropdown-menu">
+										<a class="dropdown-item" href="#">Urgent Report</a>
+										<a class="dropdown-item" href="#">Report a Crime</a>
+										<a class="dropdown-item" href="#">Report Anonymously</a>
+										<a class="dropdown-item" href="#">Status of Report</a>
+									</div>
+								</li>
+								<li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4 <%= active3 %>">
+									<a class="nav-link" href="#">Projects</a>
+								</li>
+								<li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4 <%= active4 %>">
+									<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Resources</a>
+									<div class="dropdown-menu">
+										<a class="dropdown-item" href="#">Action</a>
+										<a class="dropdown-item" href="#">Another action</a>
+										<a class="dropdown-item" href="#">Something else here</a>
+										<a class="dropdown-item" href="#">Another action</a>
+									</div>
+								</li>
+								<li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4 <%= active2 %>">
+									<a class="nav-link" href="#">Notifications</a>
+								</li>
+								<li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4 <%= active5 %>">
+									<a class="nav-link" href="#">Contact</a>
+								</li>
+							</ul>
+						</div>
+						
+					</nav>		
+				</div>
+			</div>
+		</div>
+	</div>
