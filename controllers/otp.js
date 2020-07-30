@@ -29,6 +29,9 @@ exports.save = (email,code,cb)=>
 			.exec((err,data)=>{
 				if(err)
 					cb(err);
+				if(data==undefined) {
+					return console.log("undefined: otp.create -191")
+				}
 				cb(null,data);
 			});
 		}
@@ -40,9 +43,13 @@ exports.match = (email,code,cb)=>
 	otp.find({email: email})
 	.exec((err,data)=>{
 		if(err)
-			cb(err);
-		if(data.length==0)
-			cb(null,undefined);			
+			cb(err);	
+		if(data==null){
+				return console.log("null: otp.match -193")
+		}
+		if(data==undefined){
+				return console.log("undefined: otp.match -192")
+		}
 		else
 			cb(null,bcrypt.match(code,data[0].code));
 	});
@@ -54,6 +61,9 @@ exports.remove = (email,cb)=>
 	.exec((err,data)=>{
 		if(err)
 			cb(err);
+		if(data==null){
+			return console.log("null: otp.remove -193")
+		}
 		cb(null,data);
 	})
 }
