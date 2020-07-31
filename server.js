@@ -80,6 +80,8 @@ app.locals.image = null;
 app.locals.count = counter;
 app.locals.uri = null;
 
+
+
 app.get("/", (req, res) => {
     counter++;
     res.locals.url = req.protocol + '://' + req.get('host') + req.originalUrl;
