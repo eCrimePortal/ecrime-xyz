@@ -32,7 +32,10 @@ exports.save = (email,code,cb)=>
 				if(data==undefined) {
 					return console.log("undefined: otp.create -191")
 				}
-				cb(null,data);
+				if(!data==undefined){
+					cb(null,data);
+
+				}
 			});
 		}
 	});
@@ -64,6 +67,9 @@ exports.remove = (email,cb)=>
 		if(data==null){
 			return console.log("null: otp.remove -193")
 		}
-		cb(null,data);
+		if(!data==null) {
+			cb(null,data);
+
+		}
 	})
 }
